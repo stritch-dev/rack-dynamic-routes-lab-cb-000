@@ -9,7 +9,7 @@ class Application
     item_name = req.path.split('/').last
     if path.include? "item"
       found_item = @@items.select {|item| item.name == item_name}.first
-      if found_item 
+      if found_item
         resp.write(found_item.price)
         resp.status = 200
       else
@@ -19,7 +19,6 @@ class Application
       resp.write "Route not found"
       resp.status = 400
     end
-
     resp.finish
   end
 end
